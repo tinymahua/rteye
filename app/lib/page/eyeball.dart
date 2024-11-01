@@ -58,7 +58,7 @@ class _EyeballPageState extends State<EyeballPage>
       ],
     );
     await trayManager.setContextMenu(menu);
-    await windowManager.setSize(Size(50, 100));
+    // await windowManager.setSize(Size(50, 100));
     await windowManager.setAlignment(Alignment.centerRight, animate: true);
     setState(() {});
   }
@@ -81,9 +81,7 @@ class _EyeballPageState extends State<EyeballPage>
   }
 
   Widget buildBody(BuildContext context) {
-    return Container(
-
-      child: Stack(
+    return Stack(
         alignment: AlignmentDirectional.centerEnd,
         children: [
           GestureDetector(
@@ -96,7 +94,7 @@ class _EyeballPageState extends State<EyeballPage>
             },
             child: SizedBox(
               width: 50,
-              height: 100,
+              // height: 100,
               child: Padding(
                 padding: EdgeInsets.all(3),
                 child: Center(
@@ -122,7 +120,6 @@ class _EyeballPageState extends State<EyeballPage>
             ),
           ),
         ],
-      ),
     );
   }
 }

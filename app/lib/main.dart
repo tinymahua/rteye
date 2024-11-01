@@ -1,6 +1,13 @@
+import 'dart:ffi';
+
+import 'package:app/const.dart';
 import 'package:app/page/eyeball.dart';
+import 'package:app/rustlib/rteyelib.dart';
+import 'package:app/services/ffi_service.dart';
 import 'package:app/utils/config.dart';
+import 'package:app/ffikit/ffi_loader.dart';
 import 'package:bot_toast/bot_toast.dart';
+import 'package:ffi/ffi.dart';
 import 'package:flutter/material.dart';
 import 'package:window_manager/window_manager.dart';
 
@@ -18,17 +25,37 @@ void main() async{
     windowButtonVisibility: false,
   );
 
-  windowManager.waitUntilReadyToShow(windowOptions, () async {
 
-    await windowManager.show();
-    await windowManager.focus();
-    await windowManager.setAsFrameless();
-    await windowManager.undock();
+  // await initFfiLibs();
+  // print('natives: ${FfiProxy().natives}');
+  // var rteyeNative = FfiProxy().getLib<RteyeLibNativeLibrary>(FfiLibTag.rteye.name);
+  // final ffiData = rteyeNative.get_net_stat();
+  // var e = ffiData.cast<Array<Pointer>>();
+  // print("rteyeNative: ${e}}");
+
+  // var dl = DynamicLibrary.open("libexample.so");
+  // var native = NativeLibrary(dl);
+  //
+  // String p = "/";
+  // var ffiData = native.list_dir_contents(
+  //     convertFfiOrDart<StringToPointChar, String, Pointer<Char>>(StringToPointChar(), p)
+  // );
+  // String pathInfo = convertFfiOrDart<PointCharToString, Pointer<Char>, String>(
+  //     PointCharToString(), ffiData);
+  // print("$pathInfo");
 
 
-  });
-
-  runApp(const MyApp());
+  // windowManager.waitUntilReadyToShow(windowOptions, () async {
+  //
+  //   await windowManager.show();
+  //   await windowManager.focus();
+  //   await windowManager.setAsFrameless();
+  //   await windowManager.undock();
+  //
+  //
+  // });
+  //
+  // runApp(const MyApp());
 }
 
 

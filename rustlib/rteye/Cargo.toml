@@ -1,0 +1,21 @@
+[package]
+name = "rteye"
+version = "0.1.0"
+edition = "2021"
+
+
+[lib]
+crate-type = ["dylib", "lib"]
+
+
+[dependencies]
+anyhow = "1.0.89"
+rmp-serde = "1.3.0"
+serde = "1.0.214"
+protobuf = "3.7.1"
+
+ifstat-rs = {path = "../../../ifstat-rs"}
+
+[[bin]]
+name = "cli"
+path = "bin/cli.rs"
